@@ -37,3 +37,10 @@ print 'Checking...\n\n\n'
 
 attempt = Validate_Creds(source.username, source.password, login, pw)
 result = attempt.compare_creds()
+
+if result == 0:
+    print 'Success! Logging in...'
+elif result == 1:
+    print 'FAILURE: username does not exist.'
+else:
+    print 'FAILURE: wrong password.'
