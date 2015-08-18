@@ -2,6 +2,10 @@
 # 朗盖博 2015
 from random import randint
 
+# This class provides a clean way to generate and use a D&D statblock.
+# For flexibility, the class has methods for changing its initial stats,
+# or rolling alternates as needed.
+
 # Class inits with a list of rolled stats
 class Stats(object):
     def __init__(self):

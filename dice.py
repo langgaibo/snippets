@@ -3,6 +3,9 @@
 
 from random import randint
 
+# This clunky class provides a clunky method to get dice rolls.
+# It has almost no business being a class.
+
 # inits gently
 class Dice(object):
 	def __init__(self):
