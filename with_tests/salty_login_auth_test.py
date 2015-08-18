@@ -34,7 +34,6 @@ class Validate_Creds(object):
 
 # This Class, used by our imaginary database, makes a nice, savory random salt
 # and uses that to hash the user-provided password.
-# We'll pull the hashed 
 class Actual_Creds(object):
     def __init__(self, login, pw):
         import random, string, hashlib
