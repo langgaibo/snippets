@@ -124,7 +124,7 @@ class ItemQueue(object):
 
     def break_it_off(self):
         return self.stack.pop()
-        
+
 
 
 ### TEST THE LIMITS ###
@@ -133,6 +133,8 @@ shtack = ItemQueue()
 
 # The real purpose of the class is to handle "mostly in order" tuples,
 #  but still maintaining sort order when random timestamps are not punctual.
+
+# So let's hit it with some intentionally out of order data at inopportune times!
 
 incoming_barrage = [
 ('magic',1),
@@ -143,6 +145,7 @@ incoming_barrage = [
 ('R + L = J',66),
 ('swim horse',100),
 ('I say Geneva, you hear Helsinki',25),
+('sneaky pete\'s brother, stealthy herbert',0.8),
 ('Oakland Bordello and Auto Shop, how may we service your parts?',1.000001),
 ('scrum-diddly-umptious',1.00001),
 ('infixes',1000),
@@ -152,23 +155,18 @@ incoming_barrage = [
 ('coup_de_grace',0.5)
 ]
 
-'''
-# Try hitting it hard, if you want!
-from random import randint
-
-for n in range(200):
-    incoming_barrage.append(('extra',randint(1,9)))
-'''
-
 for tup in range(len(incoming_barrage)):
     shtack.insert(incoming_barrage[tup])
 
-# How are things coming along here?
-print shtack.stack
+from random import randint
+additional_hell_list = []
+for n in range(200):
+    additional_hell_list.append(('extra',randint(1,200)))
 
-# Make it rain for a minute
-for cork in range(7):
+for tup in range(len(additional_hell_list)):
+    shtack.insert(additional_hell_list[tup])
+
+print shtack.stack
+print '\n\n'
+for cork in range(len(shtack.stack)):
     print shtack.break_it_off()
-
-# How you like me now?
-print shtack.stack
