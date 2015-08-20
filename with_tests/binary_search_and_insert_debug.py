@@ -254,7 +254,6 @@ class ItemQueue(object):
 
 
 ### TEST THE LIMITS ###
-
 shtack = ItemQueue()
 
 incoming_barrage = [
