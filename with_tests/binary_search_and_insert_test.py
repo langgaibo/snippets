@@ -3,7 +3,7 @@
 
 # This Class builds and stores a list as a stack.
 # It has 2 primary methods: Insert, and pop.
-# For insertion, t expects tuples in the format ('value',timestamp).
+# For insertion, it expects tuples in the format ('value',timestamp).
 # It does a binary search + insert for each tuple.
 # The stack is oriented with most recent timestamp at index 0,
 # and oldest at the end of the list.
@@ -54,11 +54,11 @@ class ItemQueue(object):
                 maximum = first_mid
                 next_mid = ((maximum - minimum) // 2)
 
-            self.comp_check(maximum, minimum, next_mid, first_direction)
+            self.comp_check(maximum, minimum, next_mid)
             # Shoehorn the tuple at the target index
             self.stack.insert(self.target_index, self.staged_tup)
 
-    def comp_check(self, maximum, minimum, mid, prev_direction):
+    def comp_check(self, maximum, minimum, mid):
         # if this bracket is >= 2, target and set up the next bracket
         if (maximum - minimum) >= 2:
             length = (maximum - minimum) # we'll need this later!
@@ -94,7 +94,7 @@ class ItemQueue(object):
                 # calibrate the next midpoint:
                 next_mid = (((next_maximum - next_minimum) // 2) + next_minimum)
 
-            self.comp_check(next_maximum, next_minimum, next_mid, direction)
+            self.comp_check(next_maximum, next_minimum, next_mid)
 
         elif (maximum - minimum) == 1:
             # down to the wire! Now we do some final comparisons and insert.
