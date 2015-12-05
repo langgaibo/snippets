@@ -1,6 +1,8 @@
 # Dump #
 ###########
 dump/
+staging/
+wippets/
 
 # Compiled source #
 ###################

@@ -19,6 +19,7 @@ class ItemQueue(object):
     def insert(self, tup):
         self.staged_tup = tup
         self.timestamp = tup[1]
+
         # we build temp_stack with just timestamp values
         # this will be our index map for each binary search + insert run
         self.temp_stack = []

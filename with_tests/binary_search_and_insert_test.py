@@ -1,6 +1,12 @@
 # coding: utf8
 # 朗盖博 2015
 
+# todo:
+# 1. Equality: 2 timestamps are the same, take system timestamp (which one was
+#  received first?) and do something with that
+# 2. Error handling: make sure the incoming data is correct
+# 3.
+
 # This Class builds and stores a list as a stack.
 # It has 2 primary methods: Insert, and pop.
 # For insertion, it expects tuples in the format ('value',timestamp).
